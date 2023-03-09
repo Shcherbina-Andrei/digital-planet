@@ -3,4 +3,18 @@
   min-width: 100%;
   background-color: #020222;
   color: #ffffff;
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+
+.custom__button {
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.custom__button:hover {
+  background-color: #0dd1a2;
 }

@@ -12,23 +12,23 @@ function Navbar(): JSX.Element {
         <Logo />
         <ul className="nav__menu">
           <li className="nav__item">
-            <a className="nav__link" href="/">О ПРОДУКТЕ</a>
+            <a className="nav__link" href="/">О продукте</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">КАК РАБОТАЕТ</a>
+            <a className="nav__link" href="/">Как работает</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">ТЕХНОЛОГИЯ</a>
+            <a className="nav__link" href="/">Технология</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">ВОПРОСЫ</a>
+            <a className="nav__link" href="/">Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">КОНТАКТЫ</a>
+            <a className="nav__link" href="/">Контакты</a>
           </li>
         </ul>
         <div className="nav__inner-wrapper">
-          <button className="custom__button nav__order-button">ЗАКАЗАТЬ</button>
+          <button className="custom__button nav__order-button">Заказать</button>
           <a className="nav__phone-number" href="tel:+78005553575">8 (800) 555 35 75</a>
         </div>
         <button className="nav__burger-button" type="button" onClick={() => setToggleMenu(!toggleMenu)}>
@@ -56,19 +56,19 @@ function Navbar(): JSX.Element {
       <>
         <ul className="nav__menu-smallscreen">
           <li className="nav__item">
-            <a className="nav__link" href="/">О ПРОДУКТЕ</a>
+            <a className="nav__link" href="/">О продукте</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">КАК РАБОТАЕТ</a>
+            <a className="nav__link" href="/">Как работает</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">ТЕХНОЛОГИЯ</a>
+            <a className="nav__link" href="/">Технология</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">ВОПРОСЫ</a>
+            <a className="nav__link" href="/">Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">КОНТАКТЫ</a>
+            <a className="nav__link" href="/">Контакты</a>
           </li>
         </ul>
         <div className='nav__contacts-smallscreen'>

@@ -1,8 +1,11 @@
 import React from 'react';
+import './description-screen.css';
 
 function DescriptionScreen(): JSX.Element {
   return (
-    <div>DescriptionScreen</div>
+    <div className="description">
+      DescriptionScreen
+    </div>
   );
 }
 

@@ -1,8 +1,9 @@
 .nav {
-  position: sticky;
+  position: fixed;
   width: 100%;
   padding: 40px 64px;
   background-color: transparent;
+  z-index: 10;
 }
 
 .nav__wrapper {
@@ -25,6 +26,7 @@
   font-size: 15px;
   line-height: 17px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .nav__item:not(:last-child)::after {
@@ -100,6 +102,14 @@
 }
 
 @media screen and (max-width: 950px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    padding: 22px 20px;
+    background-color: transparent;
+    z-index: 10;
+  }
+
   .nav--opened {
     background-color: rgba(28, 28, 28, 0.9);
     height: 100vh;

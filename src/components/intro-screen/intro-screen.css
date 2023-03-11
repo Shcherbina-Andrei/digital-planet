@@ -7,12 +7,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  scroll-snap-align: start;
 }
 
 .intro__wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 153px;
+  margin-top: 113px;
   margin-left: 8.78%;
 }
 

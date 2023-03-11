@@ -1,8 +1,9 @@
 import React from 'react';
+import './questions-screen.css';
 
 function QuestionsScreen() {
   return (
-    <div>QuestionsScreen</div>
+    <section className="questions">QuestionsScreen</section>
   );
 }
 

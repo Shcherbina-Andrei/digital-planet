@@ -1,8 +1,9 @@
 import React from 'react';
+import './technology-screen.css';
 
 function TechnologyScreen() {
   return (
-    <div>TechnologyScreen</div>
+    <section className="technology">TechnologyScreen</section>
   );
 }
 

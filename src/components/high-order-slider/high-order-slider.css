@@ -1,5 +1,5 @@
 .slider {
-  max-width: 561px;
+  max-width: max-content;
 }
 
 .slider__wrapper {
@@ -43,13 +43,6 @@
   position: static;
 }
 
-.slider__image {
-  display: block;
-  object-fit: cover;
-  height: 300px;
-  width: 561px;
-}
-
 .slider__controls {
   display: flex;
   justify-content: flex-end;
@@ -82,33 +75,10 @@
   color: #0dd1a2
 }
 
-@media screen and (max-width: 1250px) {
-  .slider {
-    max-width: 450px;
-  }
-
-  .slider__image {
-    display: block;
-    object-fit: cover;
-    height: 260px;
-    width: 450px;
-  }
-}
 
 @media screen and (max-width: 900px) {
-  .slider {
-    max-width: 288px;
-    width: 288px;
-  }
 
   .slider__wrapper::after {
     display: none;
-  }
-
-  .slider__image {
-    display: block;
-    object-fit: cover;
-    height: 180px;
-    width: 288px;
   }
 }

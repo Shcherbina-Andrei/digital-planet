@@ -40,7 +40,8 @@
 }
 
 .nav__link:hover,
-.nav__phone-number:hover {
+.nav__phone-number:hover,
+.nav__link--selected {
   color: #0dd1a2;
 }
 

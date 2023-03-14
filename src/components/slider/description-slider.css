@@ -1,0 +1,24 @@
+.description__slider-image {
+  display: block;
+  object-fit: cover;
+  height: 300px;
+  width: 561px;
+}
+
+@media screen and (max-width: 1250px) {
+  .description__slider-image {
+    display: block;
+    object-fit: cover;
+    height: 260px;
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .description__slider-image {
+    display: block;
+    object-fit: cover;
+    height: 180px;
+    width: 288px;
+  }
+}

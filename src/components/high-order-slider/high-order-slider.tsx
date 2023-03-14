@@ -1,15 +1,17 @@
 import React from 'react';
 import {useState} from 'react';
-import './slider.css';
+import './high-order-slider.css';
+
 
 type PropsType = {
-  images: string[];
-}
+  elements: JSX.Element[];
+};
 
-function Slider({images}: PropsType) {
+function HighOrderSlider({elements}: PropsType) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const nextSlideHandle = () => {
-    if (currentIndex === images.length - 1) {
+    if (currentIndex === elements.length - 1) {
       setCurrentIndex(0);
     } else {
       setCurrentIndex(currentIndex + 1);
@@ -18,7 +20,7 @@ function Slider({images}: PropsType) {
 
   const prevSlideHandle = () => {
     if (currentIndex === 0) {
-      setCurrentIndex(images.length - 1);
+      setCurrentIndex(elements.length - 1);
     } else {
       setCurrentIndex(currentIndex - 1);
     }
@@ -28,25 +30,25 @@ function Slider({images}: PropsType) {
     <div className="slider">
       <div className="slider__wrapper">
         <div className="slider__item-wrapper">
-          {images.map((image, imageIndex) => (
+          {elements.map((element, elementIndex) => (
             <div className={`slider__item
-            ${currentIndex === imageIndex
+          ${currentIndex === elementIndex
               ? 'slider__item--current'
               : ''}
-            ${currentIndex < imageIndex
+          ${currentIndex < elementIndex
               ? 'slider__item--next'
               : ''}
-            ${currentIndex > imageIndex
+          ${currentIndex > elementIndex
               ? 'slider__item--prev'
-              : ''}`} key={image}
+              : ''}`} key={element.key}
             >
-              <img className="slider__image" src={image} alt="slider item" width="561" height="300"/>
+              {element}
             </div>
           ))}
         </div>
       </div>
       <div className="slider__controls">
-        <p className="slider__counter"><span className="slider__current-position">{currentIndex < 10 ? `0${currentIndex + 1}` : `${currentIndex + 1}`} /</span> {images.length < 10 ? `0${images.length}` : `${images.length}`}</p>
+        <p className="slider__counter"><span className="slider__current-position">{currentIndex < 10 ? `0${currentIndex + 1}` : `${currentIndex + 1}`} /</span> {elements.length < 10 ? `0${elements.length}` : `${elements.length}`}</p>
         <div className="slider__buttons">
           <button className="slider__button" type="button" onClick={prevSlideHandle}>
             <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,4 +68,4 @@ function Slider({images}: PropsType) {
   );
 }
 
-export default Slider;
+export default HighOrderSlider;

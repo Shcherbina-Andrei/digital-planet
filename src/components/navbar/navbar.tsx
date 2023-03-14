@@ -3,7 +3,12 @@ import Logo from '../logo/logo';
 import SocialBlock from '../social-block/social-block';
 import './navbar.css';
 
-function Navbar(): JSX.Element {
+type PropsType = {
+  selectedScreen: string;
+  setSelectedScreen: (selectedScreen: string) => void;
+}
+
+function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -12,19 +17,19 @@ function Navbar(): JSX.Element {
         <Logo />
         <ul className="nav__menu">
           <li className="nav__item">
-            <a className="nav__link" href="/">О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'intro-screen' ? 'nav__link--selected' : ''}`} href="#intro-screen" onClick={() => setSelectedScreen('intro-screen')}>О продукте</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Как работает</a>
+            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => setSelectedScreen('realization-screen')}>Как работает</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Технология</a>
+            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen" onClick={() => setSelectedScreen('technology-screen')}>Технология</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Вопросы</a>
+            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen" onClick={() => setSelectedScreen('questions-screen')}>Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Контакты</a>
+            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen" onClick={() => setSelectedScreen('contacts-screen')}>Контакты</a>
           </li>
         </ul>
         <div className="nav__inner-wrapper">

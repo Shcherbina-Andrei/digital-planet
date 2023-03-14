@@ -1,11 +1,11 @@
 import React from 'react';
 import {sliderImages} from '../../descriptions-slider-images';
-import Slider from '../slider/slider';
+import DescriptionSlider from '../slider/description-slider';
 import './description-screen.css';
 
 function DescriptionScreen(): JSX.Element {
   return (
-    <section className="description">
+    <section id="description-screen" className="description">
       <div className="description__wrapper">
         <div className="description__text">
           <h2 className="screen-title description__title">Что такое VR-планетарий?</h2>
@@ -24,7 +24,7 @@ function DescriptionScreen(): JSX.Element {
         </div>
         <div className="description__slider">
           <h3 className="description__slider-title">Что показываем<br/> в планетарии</h3>
-          <Slider images={sliderImages}/>
+          <DescriptionSlider images={sliderImages}/>
         </div>
       </div>
     </section>

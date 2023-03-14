@@ -5,7 +5,7 @@ import './intro-screen.css';
 
 function IntroScreen(): JSX.Element {
   return (
-    <section className="intro">
+    <section id="intro-screen" className="intro">
       <div className="intro__wrapper">
         <h1 className="intro__title">Digital Planet VR</h1>
         <p className="intro__description">

@@ -3,7 +3,7 @@ import './questions-screen.css';
 
 function QuestionsScreen() {
   return (
-    <section className="questions">QuestionsScreen</section>
+    <section id="questions-screen" className="questions">QuestionsScreen</section>
   );
 }
 

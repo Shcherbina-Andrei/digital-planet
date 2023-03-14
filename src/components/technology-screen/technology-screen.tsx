@@ -3,7 +3,7 @@ import './technology-screen.css';
 
 function TechnologyScreen() {
   return (
-    <section className="technology">TechnologyScreen</section>
+    <section id="technology-screen" className="technology">TechnologyScreen</section>
   );
 }
 

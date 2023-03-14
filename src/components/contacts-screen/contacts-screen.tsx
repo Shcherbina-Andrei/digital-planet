@@ -2,7 +2,7 @@ import React from 'react';
 
 function ContactsScreen(): JSX.Element {
   return (
-    <div>ContactsScreen</div>
+    <section id="contact-screen" className="contact">ContactsScreen</section>
   );
 }
 

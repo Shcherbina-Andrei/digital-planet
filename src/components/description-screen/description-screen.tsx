@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {sliderImages} from '../../descriptions-slider-images';
 import DescriptionSlider from '../slider/description-slider';
 import './description-screen.css';
 
-function DescriptionScreen(): JSX.Element {
+type PropsType = {
+  setSelectedScreen: (selectedScreen: string) => void;
+}
+
+function DescriptionScreen({setSelectedScreen}: PropsType): JSX.Element {
+  const descriptionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const scrollHandle = () => {
+      if (descriptionRef.current) {
+        if (window.scrollY === descriptionRef.current.offsetTop) {
+          setSelectedScreen('description-screen');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandle);
+
+    return window.removeEventListener('scroll', scrollHandle);
+  });
+
   return (
-    <section id="description-screen" className="description">
+    <section id="description-screen" className="description" ref={descriptionRef}>
       <div className="description__wrapper">
         <div className="description__text">
           <h2 className="screen-title description__title">Что такое VR-планетарий?</h2>

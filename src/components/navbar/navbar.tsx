@@ -19,10 +19,10 @@ function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
   return (
     <nav className={`nav ${toggleMenu ? 'nav--opened' : ''}`}>
       <div className="nav__wrapper">
-        <Logo />
+        <Logo logoHandle={setSelectedScreen}/>
         <ul className="nav__menu">
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'intro-screen' ? 'nav__link--selected' : ''}`} href="#intro-screen" onClick={() => setSelectedScreen('intro-screen')}>О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen" onClick={() => setSelectedScreen('description-screen')}>О продукте</a>
           </li>
           <li className="nav__item">
             <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => setSelectedScreen('realization-screen')}>Как работает</a>
@@ -66,7 +66,7 @@ function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
       <>
         <ul className="nav__menu-smallscreen">
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'intro-screen' ? 'nav__link--selected' : ''}`} href="#intro-screen" onClick={() => handleNavLink('intro-screen')}>О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen" onClick={() => handleNavLink('description-screen')}>О продукте</a>
           </li>
           <li className="nav__item">
             <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => handleNavLink('realization-screen')}>Как работает</a>

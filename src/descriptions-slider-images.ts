@@ -85,3 +85,23 @@ export const questions = [
   }
 ];
 
+export const contacts = [
+  {
+    id: 1,
+    city: 'Новороссийск',
+    phoneNumber: '+7 (923) 465 – 01 – 41',
+    email: 'digitalPlanetNR@mail.ru'
+  },
+  {
+    id: 2,
+    city: 'Москва',
+    phoneNumber: '+7 (495) 855 – 24 – 19',
+    email: 'digitalPlanetMoscow@mail.ru'
+  },
+  {
+    id: 3,
+    city: 'Саратов',
+    phoneNumber: '+7 (942) 221 – 21 – 78',
+    email: 'digitalPlanetSaratov@mail.ru'
+  },
+];

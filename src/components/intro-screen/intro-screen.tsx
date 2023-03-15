@@ -4,6 +4,7 @@ import SocialBlock from '../social-block/social-block';
 import './intro-screen.css';
 
 function IntroScreen(): JSX.Element {
+
   return (
     <section id="intro-screen" className="intro">
       <div className="intro__wrapper">

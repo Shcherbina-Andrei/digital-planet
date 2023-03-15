@@ -1,8 +1,11 @@
 import React from 'react';
+import './contacts-screen.css';
 
 function ContactsScreen(): JSX.Element {
   return (
-    <section id="contact-screen" className="contact">ContactsScreen</section>
+    <section id="contacts-screen" className="contacts">
+      <h2 className="screen-title contacts__title">Контакты</h2>
+    </section>
   );
 }
 

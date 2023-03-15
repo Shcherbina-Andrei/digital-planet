@@ -11,6 +11,11 @@ type PropsType = {
 function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  const handleNavLink = (section: string) => {
+    setSelectedScreen(section);
+    setToggleMenu(false);
+  };
+
   return (
     <nav className={`nav ${toggleMenu ? 'nav--opened' : ''}`}>
       <div className="nav__wrapper">
@@ -61,19 +66,19 @@ function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
       <>
         <ul className="nav__menu-smallscreen">
           <li className="nav__item">
-            <a className="nav__link" href="/">О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'intro-screen' ? 'nav__link--selected' : ''}`} href="#intro-screen" onClick={() => handleNavLink('intro-screen')}>О продукте</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Как работает</a>
+            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => handleNavLink('realization-screen')}>Как работает</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Технология</a>
+            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen" onClick={() => handleNavLink('technology-screen')}>Технология</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Вопросы</a>
+            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen" onClick={() => handleNavLink('questions-screen')}>Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className="nav__link" href="/">Контакты</a>
+            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen" onClick={() => handleNavLink('contacts-screen')}>Контакты</a>
           </li>
         </ul>
         <div className='nav__contacts-smallscreen'>

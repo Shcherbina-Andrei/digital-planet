@@ -1,0 +1,70 @@
+.question-form {
+  display: grid;
+  grid-template-areas: "name email" "question question" "button .";
+  grid-template-columns: 1fr 1fr;
+  width: 560px;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.question-form__input {
+  display: flex;
+  height: 46px;
+  padding-left: 15px;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 130%;
+  color: #1c1c1c;
+}
+
+.question-form__input::placeholder {
+  font-size: 13px;
+  line-height: 130%;
+}
+
+.question-form__input--name {
+  grid-area: name;
+}
+
+.question-form__input--email {
+  grid-area: email;
+}
+
+.question-form__question-textarea {
+  grid-area: question;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 130%;
+  color: #1c1c1c;
+  padding: 15px;
+  height: 144px;
+  resize: none;
+}
+
+.question-form__question-textarea::placeholder {
+  font-size: 13px;
+  line-height: 130%;
+}
+
+.question-form__submit-button {
+  grid-area: button;
+  width: 120px;
+  margin-top: 10px;
+  border: 2px solid #0DD1A2;
+  border-radius: 2px;
+  padding: 9px 15px;
+}
+
+@media screen and (max-width: 1000px) {
+  .question-form {
+    width: 460px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .question-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+}

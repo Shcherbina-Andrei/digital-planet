@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import ContactsScreen from '../../components/contacts-screen/contacts-screen';
 import DescriptionScreen from '../../components/description-screen/description-screen';
 import IntroScreen from '../../components/intro-screen/intro-screen';
@@ -11,11 +11,12 @@ import './main-page.css';
 
 function MainPage() {
   const [selectedScreen, setSelectedScreen] = useState('intro-screen');
+
   return (
     <div className="page">
-      <Navbar selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen}/>
+      <Navbar selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
       <IntroScreen />
-      <DescriptionScreen />
+      <DescriptionScreen setSelectedScreen={setSelectedScreen} />
       <RealizationScreen />
       <TechnologyScreen />
       <QuestionsScreen />

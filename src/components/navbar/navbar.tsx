@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import {useState, memo} from 'react';
 import Logo from '../logo/logo';
 import SocialBlock from '../social-block/social-block';
 import './navbar.css';
@@ -6,39 +6,35 @@ import './navbar.css';
 type PropsType = {
   selectedScreen: string;
   setSelectedScreen: (selectedScreen: string) => void;
+  setModalActive: (modalActive: boolean) => void;
 }
 
-function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
+function Navbar({selectedScreen, setSelectedScreen, setModalActive}: PropsType): JSX.Element {
   const [toggleMenu, setToggleMenu] = useState(false);
-
-  const handleNavLink = (section: string) => {
-    setSelectedScreen(section);
-    setToggleMenu(false);
-  };
 
   return (
     <nav className={`nav ${toggleMenu ? 'nav--opened' : ''}`}>
       <div className="nav__wrapper">
-        <Logo logoHandle={setSelectedScreen}/>
+        <Logo />
         <ul className="nav__menu">
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen" onClick={() => setSelectedScreen('description-screen')}>О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen">О продукте</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => setSelectedScreen('realization-screen')}>Как работает</a>
+            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen">Как работает</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen" onClick={() => setSelectedScreen('technology-screen')}>Технология</a>
+            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen">Технология</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen" onClick={() => setSelectedScreen('questions-screen')}>Вопросы</a>
+            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen">Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen" onClick={() => setSelectedScreen('contacts-screen')}>Контакты</a>
+            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen">Контакты</a>
           </li>
         </ul>
         <div className="nav__inner-wrapper">
-          <button className="custom__button nav__order-button">Заказать</button>
+          <button className="custom__button nav__order-button" type="button" onClick={() => setModalActive(true)}>Заказать</button>
           <a className="nav__phone-number" href="tel:+78005553575">8 (800) 555 35 75</a>
         </div>
         <button className="nav__burger-button" type="button" onClick={() => setToggleMenu(!toggleMenu)}>
@@ -66,19 +62,19 @@ function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
       <>
         <ul className="nav__menu-smallscreen">
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen" onClick={() => handleNavLink('description-screen')}>О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen">О продукте</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => handleNavLink('realization-screen')}>Как работает</a>
+            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen">Как работает</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen" onClick={() => handleNavLink('technology-screen')}>Технология</a>
+            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen">Технология</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen" onClick={() => handleNavLink('questions-screen')}>Вопросы</a>
+            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen">Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen" onClick={() => handleNavLink('contacts-screen')}>Контакты</a>
+            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen">Контакты</a>
           </li>
         </ul>
         <div className='nav__contacts-smallscreen'>
@@ -90,4 +86,4 @@ function Navbar({selectedScreen, setSelectedScreen}: PropsType): JSX.Element {
   );
 }
 
-export default Navbar;
+export default memo(Navbar);

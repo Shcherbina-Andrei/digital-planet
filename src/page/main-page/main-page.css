@@ -37,6 +37,19 @@
   background-color: #0dd1a2;
 }
 
+.scroll-button__wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2.34%;
+}
+
+.mistake {
+  font-size: 13px;
+  line-height: 130%;
+  color: #f97676;
+}
+
 @media screen and (max-width: 1250px) {
   .screen-title {
     font-size: 38px;
@@ -59,5 +72,9 @@
 
   .screen-title::after {
     width: 90%;
+  }
+
+  .scroll-button__wrapper {
+    display: none;
   }
 }

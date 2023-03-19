@@ -1,13 +1,9 @@
-import React from 'react';
+import {memo} from 'react';
 import './logo.css';
 
-type PropsType = {
-  logoHandle: (selectedScreen: string) => void;
-}
-
-function Logo({logoHandle}: PropsType):JSX.Element {
+function Logo():JSX.Element {
   return (
-    <a className="logo" href="#intro-screen" onClick={() => logoHandle('#intro-screen')}>
+    <a className="logo" href="#intro-screen">
       <svg className="logo__img" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_697_156)">
           <path d="M5.47173 14.9688C6.17259 14.9688 6.74074 14.4007 6.74074 13.6998C6.74074 12.999 6.17259 12.4308 5.47173 12.4308C4.77088 12.4308 4.20273 12.999 4.20273 13.6998C4.20273 14.4007 4.77088 14.9688 5.47173 14.9688Z" fill="currentColor"/>
@@ -27,4 +23,4 @@ function Logo({logoHandle}: PropsType):JSX.Element {
   );
 }
 
-export default Logo;
+export default memo(Logo);

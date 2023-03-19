@@ -7,8 +7,13 @@
   column-gap: 10px;
 }
 
+.question-form__input-wrapper {
+  width: 100%;
+}
+
 .question-form__input {
   display: flex;
+  width: 100%;
   height: 46px;
   padding-left: 15px;
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;
@@ -22,21 +27,25 @@
   line-height: 130%;
 }
 
-.question-form__input--name {
+.question-form__input-wrapper--name {
   grid-area: name;
 }
 
-.question-form__input--email {
+.question-form__input-wrapper--email {
   grid-area: email;
 }
 
-.question-form__question-textarea {
+.question-form__input-wrapper--question-text {
   grid-area: question;
+}
+
+.question-form__question-textarea {
   font-family: "Ubuntu", Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 130%;
   color: #1c1c1c;
   padding: 15px;
+  width: 100%;
   height: 144px;
   resize: none;
 }

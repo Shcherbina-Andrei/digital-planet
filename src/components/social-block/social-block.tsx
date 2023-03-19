@@ -1,4 +1,3 @@
-import React from 'react';
 import './social-block.css';
 
 function SocialBlock():JSX.Element {

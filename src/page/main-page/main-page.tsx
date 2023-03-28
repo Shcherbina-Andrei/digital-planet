@@ -32,13 +32,18 @@ function MainPage() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    if (modalActive) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [modalActive]);
 
   return (
     <div className="page">
-      <Navbar selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} setModalActive={setModalActive} />
+      <Navbar selectedScreen={selectedScreen} setModalActive={setModalActive} />
       <IntroScreen setModalActive={setModalActive} introRef={introRef} />
       <DescriptionScreen descriptionRef={descriptionRef} />
       <RealizationScreen realizationRef={realizationRef} />

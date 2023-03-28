@@ -29,7 +29,7 @@ function ContactsScreen({contactsRef}: PropsType): JSX.Element {
         </div>
       </div>
       <footer className="contacts__footer">
-        <span className="contacts__license">© Digital Planet, 2019</span>
+        <span className="contacts__license">© Digital Planet, 2023</span>
         <span className="contacts__rights">Детский VR планетарий. Все права защищены.</span>
         <div className="contacts__social">
           <SocialBlock />

@@ -1,16 +1,27 @@
-import {useState, memo} from 'react';
+import {useState, useEffect, memo} from 'react';
 import Logo from '../logo/logo';
 import SocialBlock from '../social-block/social-block';
 import './navbar.css';
 
 type PropsType = {
   selectedScreen: string;
-  setSelectedScreen: (selectedScreen: string) => void;
   setModalActive: (modalActive: boolean) => void;
 }
 
-function Navbar({selectedScreen, setSelectedScreen, setModalActive}: PropsType): JSX.Element {
+function Navbar({selectedScreen,setModalActive}: PropsType): JSX.Element {
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  useEffect(() => {
+    if (toggleMenu && window.innerWidth < 950) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflowY = 'unset';
+    };
+  }, [toggleMenu]);
 
   return (
     <nav className={`nav ${toggleMenu ? 'nav--opened' : ''}`}>

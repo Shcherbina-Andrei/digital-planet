@@ -1,4 +1,4 @@
-import {memo, useState} from 'react';
+import {memo, useState, useEffect} from 'react';
 import ModalWindow from '../../components/modal-window/modal-window';
 import ScrollButton from '../../components/scroll-button/scroll-button';
 import SocialBlock from '../../components/social-block/social-block';
@@ -13,6 +13,14 @@ type PropsType = {
 function IntroScreen({setModalActive, introRef}: PropsType): JSX.Element {
 
   const [videoIsOpened, setVideoIsOpened] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (videoIsOpened) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [videoIsOpened]);
 
   return (
     <section id="intro-screen" className="intro" ref={introRef}>

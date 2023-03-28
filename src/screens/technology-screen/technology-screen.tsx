@@ -1,4 +1,4 @@
-import {memo, useState} from 'react';
+import {memo, useState, useEffect} from 'react';
 import {technologies} from '../../content';
 import './technology-screen.css';
 import vrImage from '../../assets/vr.png';
@@ -12,6 +12,14 @@ type PropsType = {
 
 function TechnologyScreen({technologyRef}: PropsType) {
   const [imageIsOpened, setImageIsOpened] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (imageIsOpened) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [imageIsOpened]);
 
   return (
     <section id="technology-screen" className="technology" ref={technologyRef}>

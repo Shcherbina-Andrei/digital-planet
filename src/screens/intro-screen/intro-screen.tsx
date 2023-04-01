@@ -11,16 +11,11 @@ type PropsType = {
 }
 
 function IntroScreen({introRef}: PropsType): JSX.Element {
-  const [modalActive, setModalActive] = useState(false);
+  const [modalActive, setModalActive] = useState<boolean>(false);
   const [videoIsOpened, setVideoIsOpened] = useState<boolean>(false);
 
   useEffect(() => {
-    if (videoIsOpened) {
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = 'auto';
-    }
-    if (modalActive) {
+    if (videoIsOpened || modalActive) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';

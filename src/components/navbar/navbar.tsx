@@ -16,21 +16,13 @@ function Navbar({handleScroll}: PropsType): JSX.Element {
   useEffect(() => {
     const scrollHandler = () => handleScroll(setSelectedScreen);
     window.addEventListener('scroll', scrollHandler);
-    if (toggleMenu && window.innerWidth < 950) {
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = 'auto';
-    }
-    if (modalActive) {
+    if ((toggleMenu && window.innerWidth < 950) || modalActive) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
     }
 
-    return () => {
-      document.body.style.overflowY = 'unset';
-      return document.removeEventListener('scroll', scrollHandler);
-    };
+    return () => document.removeEventListener('scroll', scrollHandler);
   }, [toggleMenu, handleScroll, modalActive]);
 
   return (
@@ -83,19 +75,19 @@ function Navbar({handleScroll}: PropsType): JSX.Element {
       <>
         <ul className="nav__menu-smallscreen">
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen">О продукте</a>
+            <a className={`nav__link ${selectedScreen === 'description-screen' ? 'nav__link--selected' : ''}`} href="#description-screen" onClick={() => setToggleMenu(false)}>О продукте</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen">Как работает</a>
+            <a className={`nav__link ${selectedScreen === 'realization-screen' ? 'nav__link--selected' : ''}`} href="#realization-screen" onClick={() => setToggleMenu(false)}>Как работает</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen">Технология</a>
+            <a className={`nav__link ${selectedScreen === 'technology-screen' ? 'nav__link--selected' : ''}`} href="#technology-screen" onClick={() => setToggleMenu(false)}>Технология</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen">Вопросы</a>
+            <a className={`nav__link ${selectedScreen === 'questions-screen' ? 'nav__link--selected' : ''}`} href="#questions-screen" onClick={() => setToggleMenu(false)}>Вопросы</a>
           </li>
           <li className="nav__item">
-            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen">Контакты</a>
+            <a className={`nav__link ${selectedScreen === 'contacts-screen' ? 'nav__link--selected' : ''}`} href="#contacts-screen" onClick={() => setToggleMenu(false)}>Контакты</a>
           </li>
         </ul>
         <div className='nav__contacts-smallscreen'>

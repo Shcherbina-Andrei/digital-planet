@@ -2,7 +2,6 @@ import {sliderImages} from '../../content';
 import './description-screen.css';
 import Slider from '../../components/slider/slider';
 import ScrollButton from '../../components/scroll-button/scroll-button';
-import {memo} from 'react';
 
 type PropsType = {
   descriptionRef: React.RefObject<HTMLElement>;
@@ -45,4 +44,4 @@ function DescriptionScreen({descriptionRef}: PropsType): JSX.Element {
   );
 }
 
-export default memo(DescriptionScreen);
+export default DescriptionScreen;

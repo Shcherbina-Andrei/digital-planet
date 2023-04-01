@@ -1,4 +1,4 @@
-import {useState, memo} from 'react';
+import {useState} from 'react';
 import ScrollButton from '../../components/scroll-button/scroll-button';
 import { questions } from '../../content';
 import './questions-screen.css';
@@ -45,4 +45,4 @@ function QuestionsScreen({questionsRef}: PropsType) {
   );
 }
 
-export default memo(QuestionsScreen);
+export default QuestionsScreen;

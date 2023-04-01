@@ -1,18 +1,27 @@
-import {useState, useEffect, memo} from 'react';
+import {useState, useEffect} from 'react';
 import Logo from '../logo/logo';
+import OrderForm from '../order-form/order-form';
 import SocialBlock from '../social-block/social-block';
 import './navbar.css';
 
 type PropsType = {
-  selectedScreen: string;
-  setModalActive: (modalActive: boolean) => void;
+  handleScroll: (setSelectedScreen: (element: string) => void) => void;
 }
 
-function Navbar({selectedScreen,setModalActive}: PropsType): JSX.Element {
+function Navbar({handleScroll}: PropsType): JSX.Element {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
+  const [selectedScreen, setSelectedScreen] = useState('intro-screen');
 
   useEffect(() => {
+    const scrollHandler = () => handleScroll(setSelectedScreen);
+    window.addEventListener('scroll', scrollHandler);
     if (toggleMenu && window.innerWidth < 950) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+    if (modalActive) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
@@ -20,8 +29,9 @@ function Navbar({selectedScreen,setModalActive}: PropsType): JSX.Element {
 
     return () => {
       document.body.style.overflowY = 'unset';
+      return document.removeEventListener('scroll', scrollHandler);
     };
-  }, [toggleMenu]);
+  }, [toggleMenu, handleScroll, modalActive]);
 
   return (
     <nav className={`nav ${toggleMenu ? 'nav--opened' : ''}`}>
@@ -93,8 +103,9 @@ function Navbar({selectedScreen,setModalActive}: PropsType): JSX.Element {
           <SocialBlock />
         </div>
       </>}
+      <OrderForm modalActiveForm={modalActive} setModalActive={setModalActive} />
     </nav>
   );
 }
 
-export default memo(Navbar);
+export default Navbar;

@@ -2,7 +2,6 @@ import {contacts} from '../../content';
 import QuestionForm from '../../components/question-form/question-form';
 import SocialBlock from '../../components/social-block/social-block';
 import './contacts-screen.css';
-import {memo} from 'react';
 
 type PropsType = {
   contactsRef: React.RefObject<HTMLElement>;
@@ -39,4 +38,4 @@ function ContactsScreen({contactsRef}: PropsType): JSX.Element {
   );
 }
 
-export default memo(ContactsScreen);
+export default ContactsScreen;

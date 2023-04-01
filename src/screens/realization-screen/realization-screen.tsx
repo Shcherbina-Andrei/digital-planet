@@ -1,4 +1,3 @@
-import {memo} from 'react';
 import WorkCard from '../../components/work-card/work-card';
 import './realization-screen.css';
 import Slider from '../../components/slider/slider';
@@ -43,5 +42,5 @@ function RealizationScreen({realizationRef}: PropsType): JSX.Element {
   );
 }
 
-export default memo(RealizationScreen);
+export default RealizationScreen;
 

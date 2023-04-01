@@ -1,17 +1,17 @@
-import {memo, useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import ModalWindow from '../../components/modal-window/modal-window';
 import ScrollButton from '../../components/scroll-button/scroll-button';
 import SocialBlock from '../../components/social-block/social-block';
 import './intro-screen.css';
 import video from '../../assets/video.mp4';
+import OrderForm from '../../components/order-form/order-form';
 
 type PropsType = {
-  setModalActive: (modalActive: boolean) => void;
   introRef: React.RefObject<HTMLElement>;
 }
 
-function IntroScreen({setModalActive, introRef}: PropsType): JSX.Element {
-
+function IntroScreen({introRef}: PropsType): JSX.Element {
+  const [modalActive, setModalActive] = useState(false);
   const [videoIsOpened, setVideoIsOpened] = useState<boolean>(false);
 
   useEffect(() => {
@@ -20,7 +20,12 @@ function IntroScreen({setModalActive, introRef}: PropsType): JSX.Element {
     } else {
       document.body.style.overflowY = 'auto';
     }
-  }, [videoIsOpened]);
+    if (modalActive) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  }, [videoIsOpened, modalActive]);
 
   return (
     <section id="intro-screen" className="intro" ref={introRef}>
@@ -55,8 +60,9 @@ function IntroScreen({setModalActive, introRef}: PropsType): JSX.Element {
       <ModalWindow themeClass='intro__modal-theme' active={videoIsOpened} setActive={() => setVideoIsOpened(false)}>
         <video className="intro__video" src={video} autoPlay muted loop />
       </ModalWindow>
+      <OrderForm modalActiveForm={modalActive} setModalActive={setModalActive} />
     </section>
   );
 }
 
-export default memo(IntroScreen);
+export default IntroScreen;

@@ -1,4 +1,4 @@
-import {memo, useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {technologies} from '../../content';
 import './technology-screen.css';
 import vrImage from '../../assets/vr.png';
@@ -64,4 +64,4 @@ function TechnologyScreen({technologyRef}: PropsType) {
   );
 }
 
-export default memo(TechnologyScreen);
+export default TechnologyScreen;

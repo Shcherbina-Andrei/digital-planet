@@ -4,4 +4,4 @@
 
 **Стек технологий**: React, Typescript, CSS(BEM), Sanity
 
-Ознакомьтесь с deploy-версией: https://startling-puppy-16d7dd.netlify.app/
+**Ознакомьтесь с deploy-версией**: https://startling-puppy-16d7dd.netlify.app/
